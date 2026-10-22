@@ -1,0 +1,310 @@
+/* ---------- Réglages généraux ---------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ede8ca;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ---------- Barre du haut ---------- */
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    min-height: 100px;
+    padding: 8px 20px;
+    background: #56834b;
+    margin-bottom: 50px;
+}
+
+.site-name {
+    color: #fffdf4;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.topbar nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.topbar nav a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 11px;
+    border-radius: 6px;
+    color: #fffdf4;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* Bouton survolé ou page actuelle */
+.topbar nav a:hover,
+.topbar nav a.actif {
+    color: #4C3C33;
+    background: rgb(254, 203, 77);
+}
+
+/* Petites images des boutons du menu */
+.nav-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* ---------- Contenu de la page ---------- */
+.page {
+    width: 90%;
+    max-width: 1300px;
+    margin: 28px auto 48px;
+}
+
+.welcome {
+    margin-bottom: 50px;
+    padding: 20px 22px;
+    border: 1px solid #e5dfcc;
+    border-radius: 9px;
+    background: #f3f4e3;
+}
+
+.welcome h1,
+.catalog-heading h1 {
+    margin: 0;
+    color: #4C3C33;
+    font-size: 24px;
+}
+
+.welcome p,
+.catalog-heading p {
+    margin: 7px 0 0;
+    color: #777766;
+    font-size: 14px;
+}
+
+/* ---------- Accueil : les cartes de catégories ---------- */
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+}
+
+.catalog-tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 142px;
+    padding: 19px;
+    border: 1px solid #e5dfcc;
+    border-radius: 9px;
+    background: #fafaef;
+}
+
+.catalog-tile:hover {
+    background: rgb(255, 215, 112);
+}
+
+.tile-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #4C3C33;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.catalog-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.tile-count strong {
+    color: #416a40;
+    font-size: 25px;
+}
+
+.tile-count span {
+    color: #777766;
+    font-size: 12px;
+}
+
+/* ---------- Titre d'une catégorie ---------- */
+.catalog-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.page-count {
+    color: #777766;
+    font-size: 13px;
+}
+
+/* ---------- Formulaire de filtres ---------- */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 10px;
+    margin-bottom: 18px;
+    padding: 13px;
+    border: 1px solid #e5dfcc;
+    border-radius: 8px;
+    background: #fafaef;
+}
+
+.filters label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 120px;
+    color: #56614b;
+    font-size: 12px;
+}
+
+.filters .search-field {
+    flex: 1;
+}
+
+.filters input,
+.filters select {
+    height: 37px;
+    padding: 0 9px;
+    border: 1px solid #d8d2bf;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.filters button {
+    height: 37px;
+    padding: 0 16px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background: #56834b;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.filters button:hover {
+    background: #416a40;
+}
+
+/* ---------- Liste des résultats (2 par ligne) ---------- */
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+/* Une carte : image | nom | infos, tout sur la même ligne */
+.item-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-height: 80px;
+    padding: 10px 14px;
+    border: 1px solid #e5dfcc;
+    border-radius: 8px;
+    background: #fafaef;
+}
+
+.item-photo img {
+    display: block;
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+}
+
+.item-card h2 {
+    width: 140px;
+    margin: 0;
+    font-size: 15px;
+}
+
+/* Zone des infos : chaque info est côte à côte avec un espace entre elles */
+.item-details {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    gap: 6px 22px;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    color: #4C3C33;
+}
+
+/* Petit titre gris au-dessus de chaque info */
+.detail small {
+    margin-bottom: 2px;
+    font-size: 11px;
+    color: #777766;
+}
+
+.price {
+    font-weight: bold;
+    color: #416a40;
+}
+
+.empty-message {
+    padding: 22px;
+    border: 1px solid #e5dfcc;
+    border-radius: 8px;
+    background: #fafaef;
+    color: #777766;
+    text-align: center;
+}
+
+/* ---------- Boutons Précédent / Suivant ---------- */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    color: #777766;
+    font-size: 13px;
+}
+
+.pagination a {
+    padding: 8px 12px;
+    border: 1px solid #e5dfcc;
+    border-radius: 5px;
+    background: #fafaef;
+}
+
+.pagination a:hover {
+    border-color: #56834b;
+}
+
+/* ---------- Petits écrans (téléphone, tablette) ---------- */
+@media (max-width: 900px) {
+    .catalog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .item-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .item-card {
+        flex-wrap: wrap;
+    }
+}
